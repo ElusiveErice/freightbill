@@ -1,0 +1,13 @@
+<!--pages/bill-edit/bill-edit.wxml-->
+<view class="account-list">
+    <view class="padding-xl radius shadow bg-white margin-top" wx:for="{{accountList}}" wx:key="*this">
+        <view class="title">
+            <text class="account-name">{{item.name}}</text>
+            <text class="account-departure">{{item.departure}}</text>
+            <text class="arrow-right"> -> </text>
+            <text class="account-destination">{{item.destination}}</text>
+        </view>
+        <view class="subtitle"><text class="account-date">{{item.date}}</text></view>
+    </view>
+    <view class="padding-xl radius shadow bg-white margin-top new-account"><text>{{'new account'}}</text></view>
+</view>
