@@ -1,0 +1,44 @@
+/* components/bill-modal.wxss */
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+	right: 0;
+	bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20rpx 20rpx 30rpx 20rpx;
+}
+
+.title-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.title {
+    font-size: 48rpx;
+    font-weight: bold;
+}
+
+.btn{
+    padding: 10rpx 20rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: rgb(0, 174, 255);
+}

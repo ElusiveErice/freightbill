@@ -1,13 +1,16 @@
 <!--pages/bill-edit/bill-edit.wxml-->
 <view class="account-list">
-    <view class="padding-xl radius shadow bg-white margin-top" wx:for="{{accountList}}" wx:key="*this">
-        <view class="title">
-            <text class="account-name">{{item.name}}</text>
-            <text class="account-departure">{{item.departure}}</text>
-            <text class="arrow-right"> -> </text>
-            <text class="account-destination">{{item.destination}}</text>
+    <block wx:for="{{accountList}}" wx:key="index">
+        <view class="account-item simple-btn" data-intem-index="{{index}}" bind:tap="onClickAccountItem">
+            <view class="subtitle"><text class="account-date">{{item.date}}</text></view>
+            <view class="title">
+                <text class="account-name">{{item.name}}</text>
+                <View class="cu-tag radius bg-green"><text class="account-departure">{{item.departure}}</text></View>
+                <image class="right-arrow-image" src="../../assets/images/right-arrow.png"></image>
+                <View class="cu-tag radius bg-yellow"><text class="account-destination">{{item.destination}}</text></View>
+            </view>
         </view>
-        <view class="subtitle"><text class="account-date">{{item.date}}</text></view>
-    </view>
-    <view class="padding-xl radius shadow bg-white margin-top new-account"><text>{{'new account'}}</text></view>
+    </block>
+    <view class="new-account simple-btn" data-intem-index="{{-1}}" bind:tap="onClickAccountItem">新增账单</view>
+    <edit-item-popup isShowEditItemPopup="{{isShowEditItemPopup}}" accountItem="{{accountList[selectedItemIndex]}}" bind:finish="onHandleFinish" bind:delete="onHandleDelete"/>
 </view>

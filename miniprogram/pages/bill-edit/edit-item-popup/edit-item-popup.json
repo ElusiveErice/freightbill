@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "bill-modal": "../../../components/bill-modal/bill-modal"
+    }
+}

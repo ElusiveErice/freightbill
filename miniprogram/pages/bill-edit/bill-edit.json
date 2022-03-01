@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "edit-item-popup": "./edit-item-popup/edit-item-popup"
+  }
 }

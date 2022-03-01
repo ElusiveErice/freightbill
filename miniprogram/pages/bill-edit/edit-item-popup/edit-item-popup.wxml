@@ -1,0 +1,42 @@
+<!--pages/bill-edit/edit-item-popup/edit-item-popup.wxml-->
+<bill-modal isVisible="{{isShowEditItemPopup}}" bind:cancel="onCancelItemEdit" bind:finish="onFinishItemEdit" title="编辑账单">
+    <view class="edit-item-container">
+        <scroll-view class="scroll-view-container" scroll-y="true">
+            <view class="account-property-container">
+                <view class="account-property-name single-line">货物名</view>
+                <input class="acount-property-value" focus="true" maxlength="20" value="{{accountItem.name}}" bind:input="onInputName" />
+            </view>
+            <view class="separate" />
+            <view class="account-property-container">
+                <view class="account-property-name single-line">日期</view>
+                <input class="acount-property-value" maxlength="20" value="{{accountItem.date}}" bind:input="onInputDate" />
+            </view>
+            <view class="separate" />
+            <view class="account-property-container">
+                <view class="account-property-name single-line">出发地</view>
+                <input class="acount-property-value" maxlength="20" value="{{accountItem.departure}}" bind:input="onInputDeparture" />
+            </view>
+            <view class="separate" />
+            <view class="account-property-container">
+                <view class="account-property-name single-line">目的地</view>
+                <input class="acount-property-value" maxlength="20" value="{{accountItem.destination}}" bind:input="onInputDestination" />
+            </view>
+            <view class="separate" />
+            <view class="account-property-container">
+                <view class="account-property-name single-line">单价</view>
+                <input class="acount-property-value" maxlength="20" value="{{accountItem.destination}}" bind:input="onInputDestination" />
+            </view>
+            <view class="separate" />
+            <view class="account-property-container">
+                <view class="account-property-name single-line">重量</view>
+                <input class="acount-property-value" maxlength="20" value="{{accountItem.destination}}" bind:input="onInputDestination" />
+            </view>
+            <view class="separate" />
+            <view class="account-property-container">
+                <view class="account-property-name single-line">总价</view>
+                <input class="acount-property-value" maxlength="20" value="{{accountItem.destination}}" bind:input="onInputDestination" />
+            </view>
+        </scroll-view>
+        <view class="btn-delete simple-btn" bind:tap="onDelete">删除账单</view>
+    </view>
+</bill-modal>

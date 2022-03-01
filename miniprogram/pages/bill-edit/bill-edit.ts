@@ -1,4 +1,11 @@
 // pages/bill-edit/bill-edit.ts
+
+export interface AccountItem {
+    name: string;
+    date: string;
+    departure: string;
+    destination: string;
+}
 Page({
 
     /**
@@ -18,7 +25,47 @@ Page({
                 departure: '长沙',
                 destination: '芜湖芜湖芜湖'
             }
-        ]
+        ],
+        isShowEditItemPopup: false,
+        selectedItemIndex: -1
+    },
+
+    onClickAccountItem(event: any) {
+        const index = event.currentTarget.dataset.intemIndex;
+        this.setData({
+            selectedItemIndex: index,
+            isShowEditItemPopup: true
+        })
+    },
+
+    onHandleFinish(event: any) {
+        const newAccountItem = event.detail;
+        if (this.data.selectedItemIndex === -1) {
+            const newAccountList = Array.from(this.data.accountList);
+            newAccountList.push(newAccountItem);
+            this.setData({
+                accountList: newAccountList
+            })
+        } else {
+            const newAccountList = this.data.accountList.map((value, index) => {
+                if (index === this.data.selectedItemIndex) {
+                    return newAccountItem;
+                }
+                return value;
+            });
+            this.setData({
+                selectedItemIndex: -1,
+                accountList: newAccountList
+            })
+        }
+    },
+
+    onHandleDelete() {
+        const newAccountList = this.data.accountList.filter((_value, index) => index !== this.data.selectedItemIndex);
+        this.setData({
+            selectedItemIndex: -1,
+            accountList: newAccountList
+        })
     },
 
     /**

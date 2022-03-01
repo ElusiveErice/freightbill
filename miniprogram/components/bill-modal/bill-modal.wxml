@@ -1,0 +1,11 @@
+<!--components/bill-modal.wxml-->
+<view class="modal-container" wx:if="{{isVisible}}">
+    <view class="modal-content">
+        <view class="title-bar">
+            <view class="btn" bind:tap="onCancel">取消</view>
+            <view class="title">{{title}}</view>
+            <view class="btn" bind:tap="onFinish">完成</view>
+        </view>
+        <slot></slot>
+    </view>
+</view>

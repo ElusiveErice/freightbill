@@ -1,0 +1,43 @@
+/* pages/bill-edit/edit-item-popup/edit-item-popup.wxss */
+.edit-item-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-bottom: 50rpx;
+}
+
+.scroll-view-container {
+    height: 600rpx;
+    padding: 20rpx;
+    background-color: #fcfcfc;
+}
+
+.account-property-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.account-property-name {
+    font-size: 36rpx;
+    padding: 30rpx 0rpx;
+    font-weight: bold;
+    width: 144rpx;
+}
+
+.acount-property-value {
+    font-size: 36rpx;
+    margin-left: 20rpx;
+}
+
+.btn-delete {
+    margin-top: 50rpx;
+    border-radius: 50rpx;
+    padding: 20rpx;
+    text-align: center;
+    background-color: red;
+    font-size: 48rpx;
+    color: white;
+    font-weight: bold;
+}
