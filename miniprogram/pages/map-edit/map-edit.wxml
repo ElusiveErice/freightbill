@@ -1,0 +1,2 @@
+<!--pages/map-edit/map-edit.wxml-->
+<mp-index-list class="city__list" list="{{list}}" bindchoose="onChoose" />

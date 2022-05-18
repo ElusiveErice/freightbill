@@ -29,7 +29,8 @@ Component({
         name: '',
         date: '',
         departure: '',
-        destination: ''
+        destination: '',
+        index: 0
     },
 
     observers: {
@@ -43,6 +44,21 @@ Component({
                 departure: value.departure,
                 destination: value.destination
             })
+        }
+    },
+
+    pageLifetimes: {
+        show() {
+            this.setData({cityList:[]})
+            const callback = (cityList: []) => {
+                this.setData({cityList})
+            };
+            wx.getStorage({
+                key: 'city_list',
+                success(res) {
+                    callback(res.data);
+                }
+            });
         }
     },
     /**
@@ -100,6 +116,38 @@ Component({
                     }
                 }
             });
+        },
+
+        onSelectDeparture() {
+            const _this = this
+            wx.navigateTo({
+                url: '../map-edit/map-edit',
+                events: {
+                    // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+                    acceptDataFromOpenedPage: function(data: { name: string}) {
+                      console.log(data)
+                      data && data.name && _this.setData({
+                          departure: data.name
+                      })
+                    },
+                  },
+              })
+        },
+        
+        onSelectDestination() {
+            const _this = this
+            wx.navigateTo({
+                url: '../map-edit/map-edit',
+                events: {
+                    // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+                    acceptDataFromOpenedPage: function(data: { name: string}) {
+                      console.log(data)
+                      data && data.name && _this.setData({
+                          destination: data.name
+                      })
+                    },
+                  },
+              })
         }
     }
 })

@@ -41,3 +41,7 @@
     color: white;
     font-weight: bold;
 }
+
+.picker {
+    background-color: greenyellow;
+}

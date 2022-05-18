@@ -1,7 +1,8 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/bill-edit/bill-edit"
+        "pages/bill-edit/bill-edit",
+        "pages/map-edit/map-edit"
     ],
     "window": {
         "backgroundTextStyle": "light",

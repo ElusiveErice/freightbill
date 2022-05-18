@@ -4,22 +4,22 @@
         <scroll-view class="scroll-view-container" scroll-y="true">
             <view class="account-property-container">
                 <view class="account-property-name single-line">货物名</view>
-                <input class="acount-property-value" focus="true" maxlength="20" value="{{accountItem.name}}" bind:input="onInputName" />
+                <input class="acount-property-value" focus="true" maxlength="20" value="{{name}}" bind:input="onInputName" />
             </view>
             <view class="separate" />
             <view class="account-property-container">
                 <view class="account-property-name single-line">日期</view>
-                <input class="acount-property-value" maxlength="20" value="{{accountItem.date}}" bind:input="onInputDate" />
+                <input class="acount-property-value" maxlength="20" value="{{date}}" bind:input="onInputDate" />
             </view>
             <view class="separate" />
-            <view class="account-property-container">
+            <view class="account-property-container" bind:tap="onSelectDeparture">
                 <view class="account-property-name single-line">出发地</view>
-                <input class="acount-property-value" maxlength="20" value="{{accountItem.departure}}" bind:input="onInputDeparture" />
+                <view class="acount-property-value">{{departure}}</view>
             </view>
             <view class="separate" />
-            <view class="account-property-container">
+            <view class="account-property-container" bind:tap="onSelectDestination">
                 <view class="account-property-name single-line">目的地</view>
-                <input class="acount-property-value" maxlength="20" value="{{accountItem.destination}}" bind:input="onInputDestination" />
+                <view class="acount-property-value">{{destination}}</view>
             </view>
             <view class="separate" />
             <view class="account-property-container">
