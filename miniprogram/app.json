@@ -2,7 +2,7 @@
     "pages": [
         "pages/index/index",
         "pages/bill-edit/bill-edit",
-        "pages/map-edit/map-edit"
+        "pages/city-select/city-select"
     ],
     "window": {
         "backgroundTextStyle": "light",

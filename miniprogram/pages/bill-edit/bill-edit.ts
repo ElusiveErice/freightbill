@@ -5,6 +5,9 @@ export interface AccountItem {
     date: string;
     departure: string;
     destination: string;
+    price: number;
+    weight: number;
+    totalPrice: number;
 }
 Page({
 
@@ -17,13 +20,19 @@ Page({
                 name: '棉花棉花棉花棉花',
                 date: '2022-2-10',
                 departure: '马鞍山',
-                destination: '长沙'
+                destination: '长沙',
+                price: 100,
+                weight: 15,
+                totalPrice: 1500
             },
             {
                 name: '酱油',
                 date: '2022-2-12',
                 departure: '长沙',
-                destination: '芜湖芜湖芜湖'
+                destination: '芜湖芜湖芜湖',
+                price: 200,
+                weight: 30,
+                totalPrice: 6000
             }
         ],
         isShowEditItemPopup: false,

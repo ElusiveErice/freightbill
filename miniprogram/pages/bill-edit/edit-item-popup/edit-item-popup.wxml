@@ -7,10 +7,12 @@
                 <input class="acount-property-value" focus="true" maxlength="20" value="{{name}}" bind:input="onInputName" />
             </view>
             <view class="separate" />
-            <view class="account-property-container">
-                <view class="account-property-name single-line">日期</view>
-                <input class="acount-property-value" maxlength="20" value="{{date}}" bind:input="onInputDate" />
-            </view>
+            <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bind:change="onChangeDate">
+                <view class="account-property-container">
+                    <view class="account-property-name single-line">日期</view>
+                    <View class="acount-property-value">{{date}}</View>
+                </view>
+            </picker>
             <view class="separate" />
             <view class="account-property-container" bind:tap="onSelectDeparture">
                 <view class="account-property-name single-line">出发地</view>
@@ -24,17 +26,17 @@
             <view class="separate" />
             <view class="account-property-container">
                 <view class="account-property-name single-line">单价</view>
-                <input class="acount-property-value" maxlength="20" value="{{accountItem.destination}}" bind:input="onInputDestination" />
+                <input class="acount-property-value" maxlength="20" value="{{price}}" type="number" bind:input="onInputDestination" />
             </view>
             <view class="separate" />
             <view class="account-property-container">
                 <view class="account-property-name single-line">重量</view>
-                <input class="acount-property-value" maxlength="20" value="{{accountItem.destination}}" bind:input="onInputDestination" />
+                <input class="acount-property-value" maxlength="20" value="{{weight}}" type="number" bind:input="onInputDestination" />
             </view>
             <view class="separate" />
             <view class="account-property-container">
                 <view class="account-property-name single-line">总价</view>
-                <input class="acount-property-value" maxlength="20" value="{{accountItem.destination}}" bind:input="onInputDestination" />
+                <input class="acount-property-value" maxlength="20" value="{{totalPrice}}" type="number" bind:input="onInputDestination" />
             </view>
         </scroll-view>
         <view class="btn-delete simple-btn" bind:tap="onDelete">删除账单</view>

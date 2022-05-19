@@ -1,4 +1,4 @@
-// pages/map-edit/map-edit.ts
+// pages/city-select/city-select.ts
 interface City {
     id: string;
     name: string;
@@ -45,7 +45,7 @@ Page({
             cityList.forEach((city: City) => {
                 const alpha = city.pinyin[0].charAt(0).toUpperCase()
                 if (!map.has(alpha)) map.set(alpha, [])
-                map.get(alpha).push({ name: city.fullname })
+                map.get(alpha).push({ name: city.name })
             })
 
             const keys = []

@@ -8,7 +8,7 @@
 }
 
 .scroll-view-container {
-    height: 600rpx;
+    max-height: 800rpx;
     padding: 20rpx;
     background-color: #fcfcfc;
 }

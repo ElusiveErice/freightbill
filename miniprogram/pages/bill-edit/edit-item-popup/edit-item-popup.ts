@@ -17,7 +17,10 @@ Component({
                 name: '',
                 date: '',
                 departure: '',
-                destination: ''
+                destination: '',
+                price: 0,
+                weight: 0,
+                totalPrice: 0
             }
         }
     },
@@ -30,19 +33,34 @@ Component({
         date: '',
         departure: '',
         destination: '',
+        price: 0,
+        weight: 0,
+        totalPrice: 0,
         index: 0
     },
 
     observers: {
         'accountItem': function (value) {
             if (value === null) {
+                this.setData({
+                    name: '',
+                    date: '',
+                    departure: '',
+                    destination: '',
+                    price: 0,
+                    weight: 0,
+                    totalPrice: 0
+                })
                 return;
             }
             this.setData({
                 name: value.name,
                 date: value.date,
                 departure: value.departure,
-                destination: value.destination
+                destination: value.destination,
+                price: value.price,
+                weight: value.weight,
+                totalPrice: value.totalPrice
             })
         }
     },
@@ -81,21 +99,9 @@ Component({
             })
         },
 
-        onInputDate(event: any) {
+        onChangeDate(event: any) {
             this.setData({
                 date: event.detail.value
-            })
-        },
-
-        onInputDeparture(event: any) {
-            this.setData({
-                departure: event.detail.value
-            })
-        },
-
-        onInputDestination(event: any) {
-            this.setData({
-                destination: event.detail.value
             })
         },
 
@@ -121,11 +127,10 @@ Component({
         onSelectDeparture() {
             const _this = this
             wx.navigateTo({
-                url: '../map-edit/map-edit',
+                url: '../city-select/city-select',
                 events: {
                     // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
                     acceptDataFromOpenedPage: function(data: { name: string}) {
-                      console.log(data)
                       data && data.name && _this.setData({
                           departure: data.name
                       })
@@ -137,11 +142,10 @@ Component({
         onSelectDestination() {
             const _this = this
             wx.navigateTo({
-                url: '../map-edit/map-edit',
+                url: '../city-select/city-select',
                 events: {
                     // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
                     acceptDataFromOpenedPage: function(data: { name: string}) {
-                      console.log(data)
                       data && data.name && _this.setData({
                           destination: data.name
                       })
